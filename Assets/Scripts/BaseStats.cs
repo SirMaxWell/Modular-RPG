@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BaseStats : MonoBehaviour
 {
+    // Any Base stats that either players or enemies will have like statmia/HP/Mana etc
+
     public int currHealth;
     public int maxHealth;
     public int currMana;
