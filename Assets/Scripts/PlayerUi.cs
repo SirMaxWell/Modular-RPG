@@ -19,7 +19,16 @@ public class PlayerUi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthBar.fillAmount = playerStats.currHealth;
-        manaBar.fillAmount = playerStats.currMana;
+        CheckHealthUi();
+        
     }
+
+
+    void CheckHealthUi()
+    {
+        healthBar.fillAmount = (float)playerStats.currHealth / (float)playerStats.maxHealth;
+    }
+
+
+   
 }
