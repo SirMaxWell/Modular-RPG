@@ -1,13 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
-public class PlayerStats : BaseStats
+public class PlayerStats : BaseCharacterStats
 {
     // Start is called before the first frame update
 
     void Start()
     {
+       
         maxHealth = 100;
         currHealth = maxHealth;
 
@@ -28,14 +28,20 @@ public class PlayerStats : BaseStats
         }
     }
 
-    void TakeDamage( int damageamount)
+    void TakeDamage( int damageAmount)
     {
-        currHealth -= damageamount;
+        damageAmount -= armor.getValue();
+        currHealth -= damageAmount;
     }
 
     void HealDamage(int heal)
     {
         currHealth += heal;
     }
+
+
+
     
+
+
 }

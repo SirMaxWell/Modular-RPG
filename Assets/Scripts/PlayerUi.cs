@@ -8,12 +8,22 @@ public class PlayerUi : MonoBehaviour
     public Image healthBar;
     public Image manaBar;
 
-    BaseStats playerStats;
+    public Image armor_Icon;
+    public Image armor_Lvl2_Icon;
+
+    public Image Fire_Resis_Icon;
+    public Image Fire_Resis_Lvl2_Icon;
+
+    PlayerStats playerStats;
     // Start is called before the first frame update
     void Start()
     {
-        playerStats = GetComponent<BaseStats>();
-
+        playerStats = GetComponent<PlayerStats>();
+        armor_Icon.enabled = false;
+        armor_Lvl2_Icon.enabled = false;
+        Fire_Resis_Icon.enabled = false;
+        Fire_Resis_Lvl2_Icon.enabled = false;
+        
     }
 
     // Update is called once per frame

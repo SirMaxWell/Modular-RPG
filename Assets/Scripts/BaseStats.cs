@@ -2,30 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseStats : MonoBehaviour
+[System.Serializable]
+public class BaseStats 
 {
     // Any Base stats that either players or enemies will have like statmia/HP/Mana etc
+    [SerializeField]
+    private int baseValue;
 
-    public int currHealth;
-    public int maxHealth;
-    public int currMana;
-    public int maxMana;
-
-    public bool isDead = false;
-
-   public void checkHP()
+    public int getValue()
     {
-        // if player is over healed
-        if(currHealth >= maxHealth)
-        {
-            currHealth = maxHealth;
-        }
-        // if player's hp is 0 then they are dead
-        if(currHealth <= 0)
-        {
-            currHealth = 0;
-            isDead = true;
-        }
+        return baseValue;
     }
 
+    
+
+   
 }
