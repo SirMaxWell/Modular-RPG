@@ -74,6 +74,7 @@ public class PlayerController3D : MonoBehaviour
 
         velocityY += Time.deltaTime * gravity;
 
+        
         // Moves the character to face the right direction
         Vector3 velocity = transform.forward * currentSpeed + Vector3.up * velocityY;
 

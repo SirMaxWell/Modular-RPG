@@ -9,12 +9,15 @@ public class RayCast : MonoBehaviour
     // what ever the player is looking at - item,door,enemy etc
     private IInteractable currentTarget;
     // refence to camera for the raycast
-    private Camera mainCamera;
+    //private Camera mainCamera;
+    public Camera FirstPersonCamera;
 
     private void Awake()
     {
+        FirstPersonCamera = GetComponent<Camera>();
         // what ever object has the tag "Main Camera"
-        mainCamera = Camera.main; 
+        //mainCamera = Camera.main; 
+
     }
 
     private void Update()
@@ -34,7 +37,7 @@ public class RayCast : MonoBehaviour
         // what i hit
         RaycastHit whatIHit;
         // Shoots out ray from camera
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = FirstPersonCamera.ScreenPointToRay(Input.mousePosition);
 
         if(Physics.Raycast(ray,out whatIHit, range))
         {

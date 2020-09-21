@@ -47,7 +47,9 @@ public class UiOnInteract : MonoBehaviour, IInteractable
         interactProgressImage.fillAmount = currentAmount / 100;
         if (currentAmount >= 100)
         {
+            
             playerUiscript.armor_Icon.enabled = true;
+            
         }
 
 

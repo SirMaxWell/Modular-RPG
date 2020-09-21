@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 3445338285094875448}
   - component: {fileID: 3445338285094875449}
   - component: {fileID: 3445338285094875450}
-  - component: {fileID: 3445338285094875451}
   m_Layer: 0
   m_Name: Basic Humanoid
   m_TagString: Untagged
@@ -125,21 +124,6 @@ MonoBehaviour:
   airControlPercent: 0
   turnSmoothTime: 0.2
   speedSmoothTime: 0.1
---- !u!114 &3445338285094875451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3445338285094875453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebcb254029d39194f9a5de0935408c82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thirdPersonCamera: {fileID: 0}
-  firstPersonCamera: {fileID: 3445338286243701065}
-  inFirstPerson: 0
 --- !u!1 &3445338285172032874
 GameObject:
   m_ObjectHideFlags: 0

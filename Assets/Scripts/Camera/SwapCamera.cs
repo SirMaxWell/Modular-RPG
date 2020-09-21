@@ -28,7 +28,8 @@ public class SwapCamera : MonoBehaviour
         if (inFirstPerson)
         {
             //we need camera movement code, creature detection code, photo capture code
-
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             //temp mouse lock code
             if (Input.GetKeyDown(KeyCode.V))
             {
@@ -40,6 +41,13 @@ public class SwapCamera : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
 
             }
+            
+        }
+        else if (!inFirstPerson)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
         }
     }
 }
