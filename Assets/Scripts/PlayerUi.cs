@@ -14,7 +14,9 @@ public class PlayerUi : MonoBehaviour
     public bool isArmorlvl2On;
 
     public Image Fire_Resis_Icon;
+    public bool isFirelvl1On;
     public Image Fire_Resis_Lvl2_Icon;
+    public bool isFirelvl2On;
 
     PlayerStats playerStats;
     // Start is called before the first frame update
@@ -50,6 +52,10 @@ public class PlayerUi : MonoBehaviour
         if (isArmorlvl2On)
         {
             playerStats.armor.baseValue = 10;
+        }
+        if(isFirelvl1On)
+        {
+            
         }
     }
 

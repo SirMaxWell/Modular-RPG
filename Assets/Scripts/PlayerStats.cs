@@ -31,15 +31,22 @@ public class PlayerStats : BaseCharacterStats
         }
     }
 
-    void TakeDamage( int damageAmount)
+    void TakeDamage( int damage)
     {
-        damageAmount -= armor.getValue();
-        currHealth -= damageAmount;
+        int TotalAttack;
+        TotalAttack = baseDamage.getValue();
+        float TotalDamage;
+        TotalDamage = (Mathf.Sqrt(TotalAttack * TotalAttack) / (TotalAttack + baseDefence.getValue()));
+        damage -= armor.getValue();
+        currHealth -= damage;
     }
 
     void HealDamage(int heal)
     {
         currHealth += heal;
+    }
+    void TakeFireDamage(int fireDamageAmount)
+    {
     }
     
 

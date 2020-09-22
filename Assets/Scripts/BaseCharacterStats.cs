@@ -10,8 +10,10 @@ public class BaseCharacterStats : MonoBehaviour
     public int maxMana;
 
     public bool isDead = false;
-    public BaseStats damageAmount;
+    public BaseStats baseDamage;
+    public BaseStats baseDefence;
     public BaseStats armor;
+    public BaseStats fireResistance;
     public void checkHP()
     {
         // if player is over healed
