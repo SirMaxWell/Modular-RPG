@@ -9,7 +9,9 @@ public class PlayerUi : MonoBehaviour
     public Image manaBar;
 
     public Image armor_Icon;
+    public bool isArmorlvl1On;
     public Image armor_Lvl2_Icon;
+    public bool isArmorlvl2On;
 
     public Image Fire_Resis_Icon;
     public Image Fire_Resis_Lvl2_Icon;
@@ -30,7 +32,7 @@ public class PlayerUi : MonoBehaviour
     void Update()
     {
         CheckHealthUi();
-        
+        ChangeStats();
     }
 
 
@@ -38,7 +40,19 @@ public class PlayerUi : MonoBehaviour
     {
         healthBar.fillAmount = (float)playerStats.currHealth / (float)playerStats.maxHealth;
     }
+    void ChangeStats()
+    {
+        if (isArmorlvl1On)
+        {
+            playerStats.armor.baseValue = 5;
+            
+        }
+        if (isArmorlvl2On)
+        {
+            playerStats.armor.baseValue = 10;
+        }
+    }
 
 
-   
+
 }

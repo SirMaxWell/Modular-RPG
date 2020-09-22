@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerStats : BaseCharacterStats
 {
     // Start is called before the first frame update
+    
+    
 
     void Start()
     {
@@ -18,9 +20,10 @@ public class PlayerStats : BaseCharacterStats
     void Update()
     {
         checkHP();
+        
         if(Input.GetKeyUp(KeyCode.F))
         {
-            TakeDamage(10);
+            TakeDamage(20);
         }
         if (Input.GetKeyUp(KeyCode.H))
         {
@@ -38,6 +41,7 @@ public class PlayerStats : BaseCharacterStats
     {
         currHealth += heal;
     }
+    
 
 
 

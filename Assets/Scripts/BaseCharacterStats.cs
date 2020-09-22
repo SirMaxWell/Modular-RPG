@@ -25,5 +25,9 @@ public class BaseCharacterStats : MonoBehaviour
             currHealth = 0;
             isDead = true;
         }
+        if(currHealth > 0)
+        {
+            isDead = false;
+        }
     }
 }
