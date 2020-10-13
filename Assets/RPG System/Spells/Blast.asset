@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e9232d7713ebc428b767054900123e, type: 3}
+  m_Name: Blast
+  m_EditorClassIdentifier: 
+  spellName: Blast
+  spellPrefab: {fileID: 6786029608934716649, guid: c193cbbb6080f014b9551df6361e14ab,
+    type: 3}
+  spellType: 1
+  elemental_Type: 0
+  ManaCost: 5
+  ProjectileSpeed: 5
+  MaxPotentialImpactDamage: 10
+  minPotentialImpactDamage: 5
+  finalImpactDamage: 8
+  MaxPotentialElementalDamage: 10
+  Duration: 5
+  finalElementDamage: 2
+  finalValue: 0
+  damage_Type: 0

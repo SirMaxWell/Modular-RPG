@@ -7,14 +7,15 @@ public class BaseStats
 {
     // Any Base stats that either players or enemies will have like statmia/HP/Mana etc
     [SerializeField]
-    public int baseValue;
-
-    public int getValue()
+    public float BaseValue;
+    // private List<StatModifier> statModifiers;
+    
+    
+    public float getValue()
     {
-        return baseValue;
+        return BaseValue;
     }
-
+    
     
 
-   
 }

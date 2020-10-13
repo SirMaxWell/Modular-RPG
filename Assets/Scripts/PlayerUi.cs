@@ -46,12 +46,12 @@ public class PlayerUi : MonoBehaviour
     {
         if (isArmorlvl1On)
         {
-            playerStats.armor.baseValue = 5;
+            playerStats.armor.BaseValue = 5;
             
         }
         if (isArmorlvl2On)
         {
-            playerStats.armor.baseValue = 10;
+            playerStats.armor.BaseValue = 10;
         }
         if(isFirelvl1On)
         {

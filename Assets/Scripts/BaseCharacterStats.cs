@@ -6,6 +6,12 @@ public class BaseCharacterStats : MonoBehaviour
 {
     public int currHealth;
     public int maxHealth;
+
+    //public float HealthCap;
+    //public float limiter_1 = 50;
+    //public float Exp;
+    //public float limiter_2 = 0.8f;
+    //public int currLevel = 1;
     public int currMana;
     public int maxMana;
 
@@ -14,6 +20,12 @@ public class BaseCharacterStats : MonoBehaviour
     public BaseStats baseDefence;
     public BaseStats armor;
     public BaseStats fireResistance;
+    [HideInInspector]
+    public Spell spellScript;
+
+
+    
+
     public void checkHP()
     {
         // if player is over healed
@@ -32,4 +44,13 @@ public class BaseCharacterStats : MonoBehaviour
             isDead = false;
         }
     }
+
+    
+    void CalcHp()
+    {
+       // maxHealth = maxHealth / (1 + limiter_1 * Exp) * (limiter_2 * currLevel);
+    }
+    
+
+    
 }
