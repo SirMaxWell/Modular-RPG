@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6e9232d7713ebc428b767054900123e, type: 3}
-  m_Name: New Blast
+  m_Name: Water Blast
   m_EditorClassIdentifier: 
-  spellName: New Blast
+  spellName: Water Blast
   spellPrefab: {fileID: 6786029608934716649, guid: c193cbbb6080f014b9551df6361e14ab,
     type: 3}
-  ManaCost: 10
-  speed: 5
-  Duration: 5
-  MaxPotentialElementalDamage: 10
-  minPotentialElementalDamage: 0
-  MaxPotentialImpactDamage: 20
-  minPotentialImpactDamage: 0
-  finalValue: 0
-  finalImpactDamage: 0
-  finalElementDamage: 0
   spellType: 1
-  elemental_Type: 0
+  elemental_Type: 1
+  ManaCost: 5
+  ProjectileSpeed: 5
+  MaxPotentialImpactDamage: 20
+  minPotentialImpactDamage: 10
+  finalImpactDamage: 18
+  MaxPotentialElementalDamage: 0
+  Duration: 0
+  finalElementDamage: 0
+  finalValue: 0
   damage_Type: 0

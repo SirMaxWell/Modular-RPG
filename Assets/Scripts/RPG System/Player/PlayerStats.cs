@@ -8,6 +8,7 @@ public class PlayerStats : BaseCharacterStats
 
     public CastSpell castSpell;
     Spell spell;
+    bool isDamageOverTimeCoroutineRunning = false;
 
 
     void Start()
@@ -57,20 +58,23 @@ public class PlayerStats : BaseCharacterStats
         currHealth += heal;
     }
 
-    internal void TakeDamage(int finalImpactDamage)
+    internal void TakeBlastDamage(int finalImpactDamage)
     {
-        //currHealth -= finalImpactDamage;
-        //StartCoroutine(DamageOverTime(spell.finalElementDamage, spell.MaxPotentialElementalDamage, spell.Duration));
-
+        Debug.Log("Hit");
+        currHealth -= finalImpactDamage;
+        
     }
 
    internal void StatusEffect(int finalElementDamage, int maxPotentialElementalDamage, int duration)
    {
-        if(spell.elemental_Type == Spell.EleType.Fire)
+        
+        if(isDamageOverTimeCoroutineRunning == false)
         {
-            StartCoroutine(DamageOverTime(finalElementDamage, maxPotentialElementalDamage, duration));
+             StartCoroutine(DamageOverTime(finalElementDamage, maxPotentialElementalDamage, duration));
+            isDamageOverTimeCoroutineRunning = true;
 
         }
+        
    }
 
     IEnumerator DamageOverTime(int finalElementDamage, int maxPotentialElementalDamage, int duration)
@@ -85,23 +89,8 @@ public class PlayerStats : BaseCharacterStats
             amountDamaged += finalElementDamage;
             yield return new WaitForSeconds(1f);
         }
+        //isDamageOverTimeCoroutineRunning = false;
     }
-
-    /*
-    IEnumerator DamageOverTime(int finalElementDamage, int maxPotentialElementalDamage, Spell spell)
-    {
-        int amountDamaged = 0;
-        int damageAmount = 10;
-        int Duration = 5;
-        int DamagePerLoop = damageAmount / Duration;
-        while (amountDamaged < damageAmount)
-        {
-
-
-            Debug.Log("Dam Hit");
-            amountDamaged += DamagePerLoop;
-            yield return new WaitForSeconds(1f);
-        }
-    }
-    */
+    
+    
 }
