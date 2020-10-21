@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6786029608934716648}
   - component: {fileID: 1001922707589070249}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Fire
   m_TagString: Spell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 96d52af724c4fd1438ff38f90f0dc6d0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,3 +106,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spell: {fileID: 0}
+  playerStats: {fileID: 0}
+  enemyStats: {fileID: 0}
