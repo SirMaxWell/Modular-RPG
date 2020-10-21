@@ -26,12 +26,7 @@ public class Cannon : MonoBehaviour
         animator = GetComponent<Animator>();
         InvokeRepeating("Shoot", spawnTime, spawnDelay);
 
-        spell = (Spell)Resources.Load("Spells/" + gameObject.name, typeof(Spell));
-        List<Spell> spellDataBase = GameObject.Find("RPGManager").GetComponent<RPGManager>().spellList;
-        for (int i = 0; i < spellDataBase.Count; i++)
-        {
-            spellList.Add(spellDataBase[i]);
-        }
+        
     }
 
     // Update is called once per frame

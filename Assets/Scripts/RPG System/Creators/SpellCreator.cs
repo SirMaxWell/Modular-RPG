@@ -79,7 +79,7 @@ public class SpellCreator : EditorWindow
         {
             if (GUILayout.Button("Create Scriptable Object"))
             {
-                AssetDatabase.CreateAsset(tempSpell, "Assets/RPG System/Spells/" + tempSpell.spellName + ".asset");
+                AssetDatabase.CreateAsset(tempSpell, "Assets/Scripts/RPG System/Spells/" + tempSpell.spellName + ".asset");
                 AssetDatabase.SaveAssets();
                 rpgManager.spellList.Add(tempSpell);
                 Selection.activeObject = tempSpell;
