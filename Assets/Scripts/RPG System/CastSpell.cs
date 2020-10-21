@@ -5,13 +5,11 @@ using UnityEngine;
 public class CastSpell : MonoBehaviour
 {
     public Transform SpawnLoc;
-    public Camera Test;
-   
-
+    public float cooldownTime;
+    private float nextFireTime = 0;
     Spell spell;
     
-    BaseCharacterStats characterStats;
-    PlayerStats playerStats;
+    
 
 
     public List<Spell> spellList = new List<Spell>();
@@ -36,8 +34,11 @@ public class CastSpell : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Input.GetMouseButton(0))
+       if(Time.time > nextFireTime)
         {
+          if(Input.GetMouseButton(0))
+          {
+            nextFireTime = Time.time + cooldownTime;
             CastMagic(spellList[0]);
             
             if(spell != null)
@@ -45,10 +46,11 @@ public class CastSpell : MonoBehaviour
                 CastMagic(spell);
 
             }
+          }
         }
 
     }
-    void CastMagic(Spell spell)
+    public void CastMagic(Spell spell)
     {
         if(spell.spellPrefab == null)
         {
@@ -56,7 +58,7 @@ public class CastSpell : MonoBehaviour
         }
         else
         {
-            GameObject spellObject = Instantiate(spell.spellPrefab, SpawnLoc.position, Test.GetComponent<Transform>().rotation); //Camera.main.GetComponent<Transform>().rotation);
+            GameObject spellObject = Instantiate(spell.spellPrefab, SpawnLoc.position, SpawnLoc.rotation); //Camera.main.GetComponent<Transform>().rotation);
             spellObject.AddComponent<Rigidbody>();
             spellObject.GetComponent<Rigidbody>().useGravity = false;
             spellObject.GetComponent<Rigidbody>().velocity = spellObject.transform.forward * spell.ProjectileSpeed;
@@ -66,9 +68,17 @@ public class CastSpell : MonoBehaviour
             if(spellCollision)
             {
                 spellCollision.spell = spell;
-                spellCollision.CalculateImpactDamage();
+                if(spell.elemental_Type == Spell.EleType.Water)
+                {
+                    spellCollision.CalculateImpactDamage();
+                }
+                if(spell.elemental_Type == Spell.EleType.Fire)
+                {
+                    spellCollision.CalculateImpactDamage();
+                    spellCollision.CalculateElementDamage();
+                }
                 
-                spellCollision.CalculateElementDamage();
+                
                 
 
 
@@ -82,30 +92,6 @@ public class CastSpell : MonoBehaviour
     
 
     
-    /*
-    IEnumerator DamageOverTimeFlat()
-    {
-        float counter = 0;
-        
-        for (int i = 0; i < spellDataBase.Count; i++)
-        {
-            while (counter < spellList[i].Duration)
-            {
-                foreach (var item in spellList)
-                {
-                    if(spellList[i].damage_Type == Spell.DamType.OverTimeFlat)
-                    {
-                        Debug.Log("Burn");
-                        spellList[i].finalElementDamage = spellList[i].MaxPotentialElementalDamage / spellList[i].Duration;
-                        yield return new WaitForSeconds(spellList[i].Duration);
-                    }
-                }
-
-            }
-        }
-        
-    }
-    
-     */
+   
     
 }
