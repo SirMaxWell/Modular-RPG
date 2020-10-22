@@ -9,14 +9,17 @@ public class PlayerUi : MonoBehaviour
     public Image manaBar;
 
     public Image armor_Icon;
-    public bool isArmorlvl1On;
     public Image armor_Lvl2_Icon;
+    public bool isArmorlvl1On;
     public bool isArmorlvl2On;
 
     public Image Fire_Resis_Icon;
-    public bool isFirelvl1On;
     public Image Fire_Resis_Lvl2_Icon;
+    public bool isFirelvl1On;
     public bool isFirelvl2On;
+
+    public Image Water_Damage_Icon;
+    public Image Fire_Damage_Icon;
 
     PlayerStats playerStats;
     // Start is called before the first frame update
@@ -27,7 +30,9 @@ public class PlayerUi : MonoBehaviour
         armor_Lvl2_Icon.enabled = false;
         Fire_Resis_Icon.enabled = false;
         Fire_Resis_Lvl2_Icon.enabled = false;
-        
+        Water_Damage_Icon.enabled = false;
+        Fire_Damage_Icon.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -41,6 +46,25 @@ public class PlayerUi : MonoBehaviour
     void CheckHealthUi()
     {
         healthBar.fillAmount = (int)playerStats.currHealth / (int)playerStats.maxHealth;
+    }
+    void CheckIconsUi()
+    {
+        if (playerStats.isOnFire == true)
+        {
+            Fire_Damage_Icon.enabled = true;
+        }
+        else if (playerStats.isOnFire == false)
+        {
+            Fire_Damage_Icon.enabled = false;
+        }
+        if (playerStats.IsWet == true)
+        {
+            Water_Damage_Icon.enabled = true;
+        }
+        else if (playerStats.IsWet == false)
+        {
+            Water_Damage_Icon.enabled = false;
+        }
     }
     void ChangeStats()
     {

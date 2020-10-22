@@ -9,7 +9,8 @@ public class PlayerStats : BaseCharacterStats
     public CastSpell castSpell;
     Spell spell;
     bool isDamageOverTimeCoroutineRunning = false;
-
+    public bool isOnFire = false;
+    public bool IsWet = false;
 
     void Start()
     {
