@@ -40,12 +40,13 @@ public class PlayerUi : MonoBehaviour
     {
         CheckHealthUi();
         ChangeStats();
+        CheckIconsUi();
     }
 
 
     void CheckHealthUi()
     {
-        healthBar.fillAmount = (int)playerStats.currHealth / (int)playerStats.maxHealth;
+        healthBar.fillAmount = (float)playerStats.currHealth / (float)playerStats.maxHealth;
     }
     void CheckIconsUi()
     {

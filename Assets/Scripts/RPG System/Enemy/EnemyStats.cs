@@ -27,8 +27,6 @@ public class EnemyStats : BaseCharacterStats
     void Update()
     {
         checkHP();
-        
-
     }
 
     

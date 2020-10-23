@@ -9,6 +9,7 @@ public class PlayerStats : BaseCharacterStats
     public CastSpell castSpell;
     Spell spell;
     bool isDamageOverTimeCoroutineRunning = false;
+    bool isDryoverTimeCoroutineRunning = false;
     public bool isOnFire = false;
     public bool IsWet = false;
 
@@ -40,19 +41,7 @@ public class PlayerStats : BaseCharacterStats
         }
     }
 
-    void TakeDamage()
-    {
-
-
-
-       // int TotalAttack;
-       // TotalAttack = baseDamage.getValue();
-       // float TotalDamage;
-       // TotalDamage = (Mathf.Sqrt(TotalAttack * TotalAttack) / (TotalAttack + baseDefence.getValue()));
-       // //TotalDamage -= armor.getValue();
-       // currHealth -= TotalDamage;
-       // Debug.Log(TotalDamage);
-    }
+    
 
     void HealDamage(int heal)
     {
@@ -66,17 +55,25 @@ public class PlayerStats : BaseCharacterStats
         
     }
 
-   internal void StatusEffect(int finalElementDamage, int maxPotentialElementalDamage, int duration)
+   internal void BurnStatusEffect(int finalElementDamage, int maxPotentialElementalDamage, int duration)
    {
         
         if(isDamageOverTimeCoroutineRunning == false)
         {
              StartCoroutine(DamageOverTime(finalElementDamage, maxPotentialElementalDamage, duration));
-            isDamageOverTimeCoroutineRunning = true;
+             isDamageOverTimeCoroutineRunning = true;
 
         }
         
    }
+   internal void WetStatusEffect()
+    {
+        if (isDryoverTimeCoroutineRunning == false)
+        {
+            StartCoroutine(DryOverTime());
+            isDryoverTimeCoroutineRunning = true;
+        }
+    }
 
     IEnumerator DamageOverTime(int finalElementDamage, int maxPotentialElementalDamage, int duration)
     {
@@ -90,8 +87,16 @@ public class PlayerStats : BaseCharacterStats
             amountDamaged += finalElementDamage;
             yield return new WaitForSeconds(1f);
         }
-        //isDamageOverTimeCoroutineRunning = false;
+        isDamageOverTimeCoroutineRunning = false;
+        isOnFire = false;
+        IsWet = false;
     }
-    
+    IEnumerator DryOverTime()
+    {
+        Debug.Log("start dry");
+        yield return new WaitForSeconds(10f);
+        isDryoverTimeCoroutineRunning = false;
+        IsWet = false;
+    }
     
 }

@@ -30,9 +30,10 @@ public class EnemyShoot : MonoBehaviour
             {
                 nextFire = Time.time + Delay;
                 ShootMagic(spellList[0]);
-                if(spell !=null)
+                if (spell !=null)
                 {
                     ShootMagic(spell);
+                    
                 }
             }
         }

@@ -104,22 +104,36 @@ public class SpellCollision : MonoBehaviour
         }
     }
 
-    void _BlastEffect(PlayerStats target)
+    void _BlastEffect(PlayerStats player)
     {
         if (spell.elemental_Type == Spell.EleType.Fire)
-        { 
-            target.TakeBlastDamage(spell.finalImpactDamage);
-            target.StatusEffect(spell.finalElementDamage, spell.MaxPotentialElementalDamage, spell.Duration);
+        {
+            player.TakeBlastDamage(spell.finalImpactDamage);
+            player.BurnStatusEffect(spell.finalElementDamage, spell.MaxPotentialElementalDamage, spell.Duration);
+            player.isOnFire = true;
+            
 
         // Debug.Log("Burn Damage Hit for " + spell.finalElementDamage);
         //Debug.Log(spell.name + " Spell hit " + target.name + " for " + spell.finalImpactDamage + " Damage!");
         }
+        if(spell.elemental_Type == Spell.EleType.Water)
+        {
+            player.TakeBlastDamage(spell.finalImpactDamage);
+            player.WetStatusEffect();
+            player.IsWet = true;
+        }
     }
-    void _JustStatusEffect(PlayerStats target)
+    void _JustStatusEffect(PlayerStats player)
     {
         if(spell.elemental_Type == Spell.EleType.Fire)
         {
-            target.StatusEffect(spell.finalElementDamage, spell.MaxPotentialElementalDamage, spell.Duration);
+            player.BurnStatusEffect(spell.finalElementDamage, spell.MaxPotentialElementalDamage, spell.Duration);
+            player.isOnFire = true;
+        }
+        if(spell.elemental_Type == Spell.EleType.Water)
+        {
+            player.WetStatusEffect();
+            player.IsWet = true;
         }
     }
 
