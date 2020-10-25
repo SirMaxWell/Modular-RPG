@@ -28,6 +28,7 @@ public class PlayerStats : BaseCharacterStats
     void Update()
     {
         checkHP();
+        CheckStatusEffect();
         
         if(Input.GetKeyUp(KeyCode.F))
         {
@@ -41,6 +42,18 @@ public class PlayerStats : BaseCharacterStats
         }
     }
 
+    void CheckStatusEffect()
+    {
+        if(isOnFire == true && IsWet == true)
+        {
+            StopAllCoroutines();
+            isDamageOverTimeCoroutineRunning = false;
+            isDryoverTimeCoroutineRunning = false;
+            IsWet = false;
+            isOnFire = false;
+            Debug.Log("Stop");
+        }
+    }
     
 
     void HealDamage(int heal)
@@ -89,10 +102,11 @@ public class PlayerStats : BaseCharacterStats
         }
         isDamageOverTimeCoroutineRunning = false;
         isOnFire = false;
-        IsWet = false;
+        //IsWet = false;
     }
     IEnumerator DryOverTime()
     {
+        
         Debug.Log("start dry");
         yield return new WaitForSeconds(10f);
         isDryoverTimeCoroutineRunning = false;
