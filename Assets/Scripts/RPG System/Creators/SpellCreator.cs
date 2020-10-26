@@ -48,6 +48,8 @@ public class SpellCreator : EditorWindow
                     // tempSpell.damage_Type = (Spell.DamType)EditorGUILayout.EnumPopup("Damage Type:", tempSpell.damage_Type);
                     tempSpell.MaxPotentialElementalDamage = EditorGUILayout.IntField("Max Elemental Damage:", tempSpell.MaxPotentialElementalDamage);
                     tempSpell.Duration = EditorGUILayout.IntField("Duration:", tempSpell.Duration);
+                    tempSpell.ManaCost = EditorGUILayout.FloatField("Mana Cost:", tempSpell.ManaCost);
+                    tempSpell.ProjectileSpeed = EditorGUILayout.FloatField("Projectile Speed:", tempSpell.ProjectileSpeed);
                 }
             }
             else if(tempSpell.elemental_Type == Spell.EleType.Water)
@@ -55,6 +57,15 @@ public class SpellCreator : EditorWindow
                 if (tempSpell.spellType == Spell.SpellType.Blast)
                 {
                     tempSpell.MaxPotentialImpactDamage = EditorGUILayout.IntField("Max Impact Damage:", tempSpell.MaxPotentialImpactDamage);
+                    tempSpell.Duration = EditorGUILayout.IntField("Duration:", tempSpell.Duration);
+                    tempSpell.ManaCost = EditorGUILayout.FloatField("Mana Cost:", tempSpell.ManaCost);
+                    tempSpell.ProjectileSpeed = EditorGUILayout.FloatField("Projectile Speed:", tempSpell.ProjectileSpeed);
+                }
+                if(tempSpell.spellType == Spell.SpellType.Status_Effect)
+                {
+                    tempSpell.Duration = EditorGUILayout.IntField("Duration:", tempSpell.Duration);
+                    tempSpell.ManaCost = EditorGUILayout.FloatField("Mana Cost:", tempSpell.ManaCost);
+                    tempSpell.ProjectileSpeed = EditorGUILayout.FloatField("Projectile Speed:", tempSpell.ProjectileSpeed);
                 }
             }
             else if (tempSpell.elemental_Type == Spell.EleType.Posion)

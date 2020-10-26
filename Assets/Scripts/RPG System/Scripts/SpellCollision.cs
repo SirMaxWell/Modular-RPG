@@ -81,7 +81,7 @@ public class SpellCollision : MonoBehaviour
         if(spell.elemental_Type == Spell.EleType.Water)
         {
             enemy.TakeBlastDamage(spell.finalElementDamage);
-            enemy.WetStatusEffect();
+            enemy.WetStatusEffect(spell.Duration);
             enemy.IsWet = true;
             Debug.Log("IsWet");
         }
@@ -99,7 +99,7 @@ public class SpellCollision : MonoBehaviour
         }
         if(spell.elemental_Type == Spell.EleType.Water)
         {
-            enemy.WetStatusEffect();
+            enemy.WetStatusEffect(spell.Duration);
             enemy.IsWet = true;
         }
     }
@@ -119,7 +119,7 @@ public class SpellCollision : MonoBehaviour
         if(spell.elemental_Type == Spell.EleType.Water)
         {
             player.TakeBlastDamage(spell.finalImpactDamage);
-            player.WetStatusEffect();
+            player.WetStatusEffect(spell.Duration);
             player.IsWet = true;
         }
     }
@@ -132,7 +132,7 @@ public class SpellCollision : MonoBehaviour
         }
         if(spell.elemental_Type == Spell.EleType.Water)
         {
-            player.WetStatusEffect();
+            player.WetStatusEffect(spell.Duration);
             player.IsWet = true;
         }
     }

@@ -48,11 +48,11 @@ public class EnemyStats : BaseCharacterStats
         }
         
     }
-    internal void WetStatusEffect()
+    internal void WetStatusEffect(int duration)
     {
         if(isDryoverTimeCoroutineRunning == false)
         {
-            StartCoroutine(DryOverTime());
+            StartCoroutine(DryOverTime(duration));
             isDryoverTimeCoroutineRunning = true;
         }
     }
@@ -75,10 +75,10 @@ public class EnemyStats : BaseCharacterStats
         IsWet = false;
     }
 
-    IEnumerator DryOverTime()
+    IEnumerator DryOverTime(int duration)
     {
         Debug.Log("start dry");
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(duration);
         isDryoverTimeCoroutineRunning = false;
         IsWet = false;
     }
