@@ -30,7 +30,7 @@ public class PlayerStats : BaseCharacterStats
         checkHP();
         CheckStatusEffect();
         
-        if(Input.GetKeyUp(KeyCode.F))
+        if(Input.GetKeyUp(KeyCode.M))
         {
 
             

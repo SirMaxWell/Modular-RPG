@@ -12,8 +12,8 @@ public class BaseCharacterStats : MonoBehaviour
     //public float Exp;
     //public float limiter_2 = 0.8f;
     //public int currLevel = 1;
-    public int currMana;
-    public int maxMana;
+    public float currMana;
+    public float maxMana;
 
     public bool isDead = false;
     public BaseStats baseDamage;

@@ -17,11 +17,11 @@ MonoBehaviour:
     type: 3}
   spellType: 1
   elemental_Type: 1
-  ManaCost: 5
+  ManaCost: 6
   ProjectileSpeed: 5
   MaxPotentialImpactDamage: 20
   minPotentialImpactDamage: 10
-  finalImpactDamage: 18
+  finalImpactDamage: 10
   MaxPotentialElementalDamage: 0
   Duration: 0
   finalElementDamage: 0

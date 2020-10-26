@@ -39,6 +39,7 @@ public class PlayerUi : MonoBehaviour
     void Update()
     {
         CheckHealthUi();
+        CheckManaUi();
         ChangeStats();
         CheckIconsUi();
     }
@@ -47,6 +48,10 @@ public class PlayerUi : MonoBehaviour
     void CheckHealthUi()
     {
         healthBar.fillAmount = (float)playerStats.currHealth / (float)playerStats.maxHealth;
+    }
+    void CheckManaUi()
+    {
+        manaBar.fillAmount = (float)playerStats.currMana / (float)playerStats.maxMana;
     }
     void CheckIconsUi()
     {

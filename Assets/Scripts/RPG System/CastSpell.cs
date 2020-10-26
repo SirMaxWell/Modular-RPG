@@ -10,6 +10,7 @@ public class CastSpell : MonoBehaviour
     Spell spell;
     
     
+    
 
 
     public List<Spell> spellList = new List<Spell>();
@@ -26,7 +27,7 @@ public class CastSpell : MonoBehaviour
             
 
         }
-
+        
 
     }
     
@@ -40,6 +41,7 @@ public class CastSpell : MonoBehaviour
           {
             nextFireTime = Time.time + cooldownTime;
             CastMagic(spellList[0]);
+            //playerStats.currMana -= spell.ManaCost;
             
             if(spell != null)
             {
@@ -63,9 +65,14 @@ public class CastSpell : MonoBehaviour
             spellObject.GetComponent<Rigidbody>().useGravity = false;
             spellObject.GetComponent<Rigidbody>().velocity = spellObject.transform.forward * spell.ProjectileSpeed;
             spellObject.name = spell.spellName;
+            Debug.Log("Spell Mana Cost " + spell.ManaCost);
+            PlayerStats playerStats = GetComponent<PlayerStats>();
+            Debug.Log(playerStats.currMana);
+            playerStats.currMana -= spell.ManaCost;
+            
             spellObject.transform.parent = GameObject.Find("RPGManager").transform;
             SpellCollision spellCollision = spellObject.GetComponent<SpellCollision>();
-            if(spellCollision)
+            if (spellCollision)
             {
                 spellCollision.spell = spell;
                 if(spell.elemental_Type == Spell.EleType.Water)
@@ -83,6 +90,8 @@ public class CastSpell : MonoBehaviour
 
 
             }
+            
+            
             Destroy(spellObject, 2);
         }
         
