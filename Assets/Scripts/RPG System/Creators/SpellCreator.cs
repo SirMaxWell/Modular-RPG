@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class SpellCreator : EditorWindow
 {
-    //[MenuItem("RPG System/RPG Creator/Spell")]
+    
     static void Init()
     {
         SpellCreator spellWindow = (SpellCreator)CreateInstance(typeof(SpellCreator));
@@ -17,7 +17,7 @@ public class SpellCreator : EditorWindow
     
 
 
-    void OnGUI()
+    void OnGUI() // Shows gui for the user to use and interact with
     {
         if(rpgManager = null)
         {
@@ -28,15 +28,15 @@ public class SpellCreator : EditorWindow
             EditorGUILayout.LabelField("Spell Creator");
             tempSpell.spellName = EditorGUILayout.TextField("Spell Name:", tempSpell.spellName);
             tempSpell.spellPrefab = (GameObject)EditorGUILayout.ObjectField("Spell Prefab:", tempSpell.spellPrefab, typeof(GameObject), false);
-            tempSpell.elemental_Type = (Spell.EleType)EditorGUILayout.EnumPopup("Elemental Type:", tempSpell.elemental_Type);
-            tempSpell.spellType = (Spell.SpellType)EditorGUILayout.EnumPopup("Spell Type:", tempSpell.spellType);
+            tempSpell.elemental_Type = (Spell.EleType)EditorGUILayout.EnumPopup("Elemental Type:", tempSpell.elemental_Type); // after picking a type the other information will appear
+            tempSpell.spellType = (Spell.SpellType)EditorGUILayout.EnumPopup("Spell Type:", tempSpell.spellType); // after picking a type the other information will appear
             if(tempSpell.elemental_Type == Spell.EleType.Fire)
             {
                 if (tempSpell.spellType == Spell.SpellType.Blast)
                 {
                     
                     tempSpell.MaxPotentialImpactDamage = EditorGUILayout.IntField("Max Impact Damage:", tempSpell.MaxPotentialImpactDamage);
-                    EditorGUILayout.HelpBox("Max Impact Damage is what the attack could potentially do, isn't always the same amount", MessageType.Info);
+                    EditorGUILayout.HelpBox("Max Impact Damage is what the attack could potentially do, isn't always the same amount", MessageType.Info); // help box
                     EditorGUILayout.Space();
                     tempSpell.MaxPotentialElementalDamage = EditorGUILayout.IntField("Max Elemental Damage:", tempSpell.MaxPotentialElementalDamage);
                     tempSpell.Duration = EditorGUILayout.IntField("Duration:", tempSpell.Duration);

@@ -41,6 +41,7 @@ public class Spell : ScriptableObject
     public enum EleType
     { Fire, Water, Posion }
     
+    // not using at the moment 
     public enum DamType
     { OverTimeFlat, OverTimePercentage }
 

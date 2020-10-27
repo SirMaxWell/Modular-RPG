@@ -21,9 +21,9 @@ MonoBehaviour:
   ProjectileSpeed: 5
   MaxPotentialImpactDamage: 20
   minPotentialImpactDamage: 10
-  finalImpactDamage: 10
+  finalImpactDamage: 15
   MaxPotentialElementalDamage: 0
-  Duration: 0
+  Duration: 10
   finalElementDamage: 0
   finalValue: 0
   damage_Type: 0
