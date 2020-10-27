@@ -105,15 +105,21 @@ public class SpellCreator : EditorWindow
             }
         }
         
-
+        // Resets all values
         void Reset()
         {
             if(tempSpell)
             {
                 tempSpell.spellName = "New Spell";
-                tempSpell.ManaCost = 0;
                 tempSpell.spellPrefab = null;
                 tempSpell.spellType = Spell.SpellType.None;
+                tempSpell.elemental_Type = Spell.EleType.None;
+                tempSpell.MaxPotentialImpactDamage = 0;
+                tempSpell.MaxPotentialElementalDamage = 0;
+                tempSpell.Duration = 0;
+                tempSpell.ProjectileSpeed = 0;
+
+                tempSpell.ManaCost = 0;
             }
         }
         void Exit()

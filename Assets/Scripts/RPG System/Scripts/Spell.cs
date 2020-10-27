@@ -39,7 +39,7 @@ public class Spell : ScriptableObject
     public enum SpellType
     { None, Blast, Status_Effect }
     public enum EleType
-    { Fire, Water, Posion }
+    { None,Fire, Water, Posion }
     
     // not using at the moment 
     public enum DamType

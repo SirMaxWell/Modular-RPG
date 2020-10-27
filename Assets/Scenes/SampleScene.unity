@@ -208,7 +208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &105414962
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1488,7 +1488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &764510796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2924,12 +2924,12 @@ PrefabInstance:
     - target: {fileID: 4467801769194863225, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.41341922
+      value: -0.41341916
       objectReference: {fileID: 0}
     - target: {fileID: 4467801769194863225, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.28586906
+      value: -0.2858691
       objectReference: {fileID: 0}
     - target: {fileID: 4467801769194863225, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
@@ -2954,17 +2954,17 @@ PrefabInstance:
     - target: {fileID: 5403398358329837622, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.018189443
+      value: 0.018189378
       objectReference: {fileID: 0}
     - target: {fileID: 5403398358329837622, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000044703487
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5403398358329837622, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000029802326
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5403398358329837622, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
@@ -2974,12 +2974,12 @@ PrefabInstance:
     - target: {fileID: 7463684726465437727, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.000000063329935
+      value: -0.00000009313226
       objectReference: {fileID: 0}
     - target: {fileID: 7463684726465437727, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000044703484
+      value: -0.000000037252903
       objectReference: {fileID: 0}
     - target: {fileID: 7463684726465437727, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
@@ -2999,17 +2999,17 @@ PrefabInstance:
     - target: {fileID: 8569895982669107148, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000074505806
+      value: -0.000000007450581
       objectReference: {fileID: 0}
     - target: {fileID: 8569895982669107148, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000044703484
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8569895982669107148, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9998355
+      value: 0.99983543
       objectReference: {fileID: 0}
     - target: {fileID: 9188198751804200897, guid: 6af5fc38816993c4280e0311f5e58718,
         type: 3}
@@ -3995,15 +3995,6 @@ MonoBehaviour:
   currMana: 0
   maxMana: 0
   isDead: 0
-  baseDamage:
-    BaseValue: 0
-  baseDefence:
-    BaseValue: 0
-  armor:
-    BaseValue: 0
-  fireResistance:
-    BaseValue: 0
-  spellScript: {fileID: 0}
   isOnFire: 0
   IsWet: 0
 --- !u!114 &1759641025
@@ -4426,7 +4417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1970277125
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4520,15 +4511,6 @@ MonoBehaviour:
   currMana: 0
   maxMana: 0
   isDead: 0
-  baseDamage:
-    BaseValue: 0
-  baseDefence:
-    BaseValue: 0
-  armor:
-    BaseValue: 0
-  fireResistance:
-    BaseValue: 0
-  spellScript: {fileID: 0}
   isOnFire: 0
   IsWet: 0
 --- !u!65 &1995252869
@@ -4937,15 +4919,6 @@ MonoBehaviour:
   currMana: 0
   maxMana: 0
   isDead: 0
-  baseDamage:
-    BaseValue: 0
-  baseDefence:
-    BaseValue: 0
-  armor:
-    BaseValue: 0
-  fireResistance:
-    BaseValue: 0
-  spellScript: {fileID: 0}
   castSpell: {fileID: 2107690575}
   isOnFire: 0
   IsWet: 0
@@ -4984,14 +4957,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1504940181}
   manaBar: {fileID: 1733215363}
-  armor_Icon: {fileID: 17855811}
-  armor_Lvl2_Icon: {fileID: 901851389}
-  isArmorlvl1On: 0
-  isArmorlvl2On: 0
-  Fire_Resis_Icon: {fileID: 289537545}
-  Fire_Resis_Lvl2_Icon: {fileID: 2044305336}
-  isFirelvl1On: 0
-  isFirelvl2On: 0
   Water_Damage_Icon: {fileID: 662624619}
   Fire_Damage_Icon: {fileID: 1529132039}
 --- !u!114 &2107690575
