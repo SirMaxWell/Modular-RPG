@@ -49,6 +49,7 @@ public class UiOnInteract : MonoBehaviour, IInteractable
         interactProgressImage.fillAmount = currentAmount / 100;
         if (currentAmount >= 100)
         {
+            /*
             if(pickUpId == 1)
             {
                 playerUiScript.armor_Icon.enabled = true;
@@ -70,7 +71,7 @@ public class UiOnInteract : MonoBehaviour, IInteractable
                 playerUiScript.Fire_Resis_Lvl2_Icon.enabled = true;
             }
 
-
+            */
 
         }
 
