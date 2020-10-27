@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyStats : BaseCharacterStats
 {
+    // same as player stats
     Spell spell;
     bool isDamageOverTimeCoroutineRunning = false;
     bool isDryoverTimeCoroutineRunning = false;

@@ -3,25 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseCharacterStats : MonoBehaviour
-{
+{   
+    // used in Enemy and player stats
     public int currHealth;
     public int maxHealth;
-
-    //public float HealthCap;
-    //public float limiter_1 = 50;
-    //public float Exp;
-    //public float limiter_2 = 0.8f;
-    //public int currLevel = 1;
     public float currMana;
     public float maxMana;
 
     public bool isDead = false;
-    public BaseStats baseDamage;
-    public BaseStats baseDefence;
-    public BaseStats armor;
-    public BaseStats fireResistance;
-    [HideInInspector]
-    public Spell spellScript;
+    //public BaseStats baseDamage;
+    //public BaseStats baseDefence;
+    //public BaseStats armor;
+    //public BaseStats fireResistance;
+    
+    
 
 
     
@@ -46,10 +41,7 @@ public class BaseCharacterStats : MonoBehaviour
     }
 
     
-    void CalcHp()
-    {
-       // maxHealth = maxHealth / (1 + limiter_1 * Exp) * (limiter_2 * currLevel);
-    }
+   
     
 
     

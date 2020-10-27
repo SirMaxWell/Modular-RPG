@@ -45,7 +45,6 @@ public class SpellCreator : EditorWindow
                 }
                 if (tempSpell.spellType == Spell.SpellType.Status_Effect)
                 {
-                    // tempSpell.damage_Type = (Spell.DamType)EditorGUILayout.EnumPopup("Damage Type:", tempSpell.damage_Type);
                     tempSpell.MaxPotentialElementalDamage = EditorGUILayout.IntField("Max Elemental Damage:", tempSpell.MaxPotentialElementalDamage);
                     tempSpell.Duration = EditorGUILayout.IntField("Duration:", tempSpell.Duration);
                     tempSpell.ManaCost = EditorGUILayout.FloatField("Mana Cost:", tempSpell.ManaCost);

@@ -5,23 +5,13 @@ using UnityEngine;
 public class EnemyShoot : MonoBehaviour
 {
 
-    public float Delay = 5f;
+    public float Delay = 5f; // delay between shots
     public float nextFire = 0f;
     public Transform SpawnLoc;
 
     Spell spell;
     public List<Spell> spellList = new List<Spell>();
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void FixedUpdate()
     {
         if(Time.time > nextFire)
@@ -29,7 +19,7 @@ public class EnemyShoot : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.F))
             {
                 nextFire = Time.time + Delay;
-                ShootMagic(spellList[0]);
+                ShootMagic(spellList[0]); // fires first spell in the list 
                 if (spell !=null)
                 {
                     ShootMagic(spell);
@@ -38,7 +28,7 @@ public class EnemyShoot : MonoBehaviour
             }
         }
     }
-
+    // same as cast magic for the player
     public void ShootMagic(Spell spell)
     {
         if (spell.spellPrefab == null)
