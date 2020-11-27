@@ -16,7 +16,7 @@ MonoBehaviour:
   spellPrefab: {fileID: 6786029608934716649, guid: 47355ae02d92270468f5aaf8e63724fe,
     type: 3}
   spellType: 2
-  elemental_Type: 0
+  elemental_Type: 1
   ManaCost: 0
   ProjectileSpeed: 5
   MaxPotentialImpactDamage: 0

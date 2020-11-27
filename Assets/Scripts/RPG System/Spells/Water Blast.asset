@@ -16,12 +16,12 @@ MonoBehaviour:
   spellPrefab: {fileID: 6786029608934716649, guid: c193cbbb6080f014b9551df6361e14ab,
     type: 3}
   spellType: 1
-  elemental_Type: 1
+  elemental_Type: 2
   ManaCost: 6
   ProjectileSpeed: 5
   MaxPotentialImpactDamage: 20
   minPotentialImpactDamage: 10
-  finalImpactDamage: 15
+  finalImpactDamage: 18
   MaxPotentialElementalDamage: 0
   Duration: 10
   finalElementDamage: 0
